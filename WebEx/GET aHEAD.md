@@ -1,4 +1,7 @@
 Tham khảo: https://www.youtube.com/watch?v=GrUuWYwA5l0
+
+https://viblo.asia/p/http-request-la-gi-cac-phuong-thuc-http-request-6J3Zgy6A5mB
+
 *Sử dụng intercept rồi copy request vào repeater*
 
 http://mercury.picoctf.net:45028/index.php
@@ -15,7 +18,7 @@ POST
 
 ![image](https://github.com/user-attachments/assets/b565a5e5-d5c7-40bf-a2c9-7a9587f5f6e1)
 
-Vậy nên có thể thấy rằng thay đổi request này sẽ giúp chúng ta tìm ra lựa chọn thứ 3, đó là đổi thành HEAD
+Vậy nên có thể thấy rằng thay đổi request này sẽ giúp chúng ta tìm ra lựa chọn thứ 3 trong các HTTP request (GET, POST, HEAD, PUT, PATCH, DELETE), đó là đổi thành HEAD
 
 ![image](https://github.com/user-attachments/assets/79f7e222-b8ac-4d8d-8545-77afd4f725e3)
 
