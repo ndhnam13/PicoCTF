@@ -9,6 +9,8 @@ Tạo một file PHP để tạo 1 shell và thực hiện trên web, cho file �
 
 Tên file flag được decode = base32
 
+Dùng `%20` thay cho dấu cách trong url để có thể dùng lệnh `curl`
+
 # Upload thử các loại file 
 Nếu upload 1 file PNG bình thường sẽ báo thành công
 
