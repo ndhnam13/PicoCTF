@@ -77,8 +77,12 @@ password = decrypt(output)
 print("Recovered password:", password)
 ```
 
-Chạy script đó ta có mật khẩu đúng, nhập vào phần mềm sẽ chạy ra sample flag
+Chạy script đó ta có mật khẩu đúng `mmhhkjbakavyaqprqnpbuygdymyyddkratrjsbbceizsgtbcxd`, nhập vào phần mềm sẽ chạy ra sample flag
 
 ![image](https://github.com/user-attachments/assets/a6eb9900-0379-4576-8f93-5fe7ea523df8)
 
 Nhập mật khẩu lên web
+
+![image](https://github.com/user-attachments/assets/c80ff9e0-30f3-4717-bb3d-1b8f5bb8d82e)
+
+`picoCTF{s0lv3_angry_symb0ls_ddcc130f}`
