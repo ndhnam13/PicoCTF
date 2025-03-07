@@ -4,7 +4,7 @@ https://artifacts.picoctf.net/c_titan/126/snake
 
 File `snake` là một dạng python byte code, để đưa nó về code bình thường có thể dùng chatGPT xd hoặc [pydc](https://github.com/zrax/pycdc)
 
-Nếu dùng chatGPT thì key_str phải là `t_Joe` chứ không phải `Joe_t`, phần tích phần dưới sẽ rõ, chắc do GPT ngu
+Nếu dùng chatGPT thì key_str phải là `t_Jo3` chứ không phải `J_o3t`, phần tích phần dưới sẽ rõ, chắc do GPT ngu
 
 ```python
   2          84 LOAD_CONST              31 ('J')
@@ -21,12 +21,12 @@ Nếu dùng chatGPT thì key_str phải là `t_Joe` chứ không phải `Joe_t`,
             102 STORE_NAME               1 (key_str)
 
   5         104 LOAD_NAME                1 (key_str)
-            106 LOAD_CONST              34 ('3')      # "_Joe"
+            106 LOAD_CONST              34 ('3')      # "_Jo3"
             108 BINARY_ADD
             110 STORE_NAME               1 (key_str)
 
   6         112 LOAD_CONST              35 ('t')
-            114 LOAD_NAME                1 (key_str)  # "t_Joe"
+            114 LOAD_NAME                1 (key_str)  # "t_Jo3"
             116 BINARY_ADD
             118 STORE_NAME               1 (key_str)
 ```
