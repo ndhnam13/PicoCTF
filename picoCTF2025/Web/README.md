@@ -95,6 +95,10 @@ getattr(
     chr(99) + chr(97) + chr(116) + chr(32) + chr(47) + chr(102) + chr(108) + chr(97) + chr(103) + chr(46) + chr(116) + chr(120) + chr(116)
 ).read()
 ```
+- Dịch ra là:
+``` py
+getattr(__import__("os"),"popen")("cat /flag.txt").read()  
+```
 ![image](https://github.com/user-attachments/assets/cfd50c20-6c67-49e5-9d87-63b12cd3dcde)
 
 `picoCTF{D0nt_Use_Unsecure_f@nctions0efe84e3}`
