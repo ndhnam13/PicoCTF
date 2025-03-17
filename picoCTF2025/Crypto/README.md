@@ -59,11 +59,11 @@ print("Flag:", flag.decode())
 
 - Hint có nhắc đến `The one that incorporates your affinity for linear equations???`, google tìm được một kết quả khá hứa hẹn là `affine cipher` https://en.wikipedia.org/wiki/Affine_cipher
 
-![image](https://github.com/user-attachments/assets/970d7fe7-1d71-4823-bacd-298a25b1aa65)
+![image](https://github.com/user-attachments/assets/82098293-3a7c-489b-b199-e4531e01f43f)
 
-- Ở đây D(x) là kí tự gốc sau giải mã, C là kí tự mã hoá, a và b là 2 số nguyên được chọn làm khoá mã hoá (0 < a,b < 26), m là kích thước bảng chữ cái (ở đây dùng tiếng anh nên m = 26)
+- Ở đây D(x) là kí tự gốc sau giải mã, x là kí tự mã hoá, a và b là 2 số nguyên được chọn làm khoá mã hoá (0 < a,b < 26), m là kích thước bảng chữ cái (ở đây dùng tiếng anh nên m = 26)
 - Hơn nữa, a còn phải là coprime của m => a chỉ có thể là [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25]
-- Từ đây e nhờ chatgpt viết script giải mã bằng cách bruteforce affine cipher với mọi cặp a,b
+- Từ đây e nhờ chatgpt viết script giải mã bằng cách chạy affine cipher với mọi cặp a,b
 ``` py
 def affine_decrypt(ciphertext, a, b):
     plaintext = ""
