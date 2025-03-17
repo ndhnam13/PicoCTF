@@ -97,6 +97,7 @@ brute_force_affine_decrypt(ciphertext)
 
 - Biết được cặp số đúng là `a=1, b=21`
 - Thử lại với `QDBIJOOZEAJ` ta biết tên nó là `VIGNOTTEJFO`
+
 ![image](https://github.com/user-attachments/assets/99b9fb22-7e2f-4fe2-8831-8909df55589d)
 
 - Quay lại bài và chọn g rồi nhập `VIGNOTTEJFO`
