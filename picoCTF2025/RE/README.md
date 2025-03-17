@@ -160,7 +160,7 @@ unscramble(scrambled_flag)
 
 - Bài này sẽ tạo một token 20 ký tự ngẫu nhiên từ bảng chữ cái tiếng anh rồi tạo một seed đặt bằng thời gian hiện tại dưới dạng milisecond, nếu nhập đúng token sẽ in ra flag, chương trình giới hạn 50 lần thử
 - E có thử đưa chatgpt giải và có script nhưng chỉ được một lần, các lần sau không ra flag
-
+- Script này sẽ cố gắng match token với seed và thời gian trên server +- 100ms nếu đúng sẽ dừng lại
 ``` py
 import random
 import time
@@ -208,7 +208,7 @@ def main():
                 print(response)
                 
                 # Check if the response contains the flag or indicates success
-                if "Congratulations" in response or "flag" in response:
+                if "Congratulations" in response or "pico" in response:
                     print("Flag found! Exiting...")
                     sock.close()
                     return
