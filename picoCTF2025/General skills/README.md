@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/321abb01-d490-4671-8008-13a5a6f23fc4)## FANTASY CTF, Rust fixme 1,2,3
+## FANTASY CTF, Rust fixme 1,2,3
 
 # FANTASY CTF
 ![image](https://github.com/user-attachments/assets/b5be2e54-faf1-4aab-918c-ff23817c37b7)
