@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/273058fd-bbb7-45b6-bf45-cf3024c7ce56)# Ph4nt0m 1ntrud3r, RED, flags are stepic, Bitlocker-1, Event-Viewing
+## Ph4nt0m 1ntrud3r, RED, flags are stepic, Bitlocker-1, Event-Viewing, Bitlocker-2
 
 # Ph4nt0m 1ntrud3r
 ![image](https://github.com/user-attachments/assets/8c74139f-a64c-4528-8051-16dd2725d791)
@@ -122,3 +122,23 @@ $bitlocker$3$16$2b71884a0ef66f0b9de049a82a39d15b$1048576$12$00be8a46ead6da010600
 
 `picoCTF{Ev3nt_vi3wv3r_1s_a_pr3tty_us3ful_t00l_81ba3fe9}`
 
+# Bitlocker-2
+- Đến bài thứ 2, Jacky không còn sử dụng mật khẩu yếu nữa nên không thể bruteforce mật khẩu này được mà phải dùng một cách khác
+- Bài này cũng cho ta một file memory dump trong khi cái drive này đang được mở, từ đây khá rõ rằng ta có thể lấy một đoạn mã gì đó từ ram dump này để decrypt cái bitlocker drive này
+- Tìm hiểu về cách thức bypass bitlocker với memory dump trên google tìm được một vài kết quả rất có ích
+- https://noinitrd.github.io/Memory-Dump-UEFI/
+- Từ bài viết trên ta tìm được thêm một đường link dẫn đến đây https://tribalchicken.net/recovering-bitlocker-keys-on-windows-8-1-and-10/ có đưa đến github của tác giả https://github.com/tribalchicken/volatility-bitlocker?ref=tribalchicken.net về một plugin cho volatility2 để xuất ra các FVEK(Full volume encryption key) hoặc VMK(Volume encryption key) `dislocker` cũng có option cho FVEK và VMK `-k key.fvek` phải đưa FVEK vào file `.fvek`
+- Tải volatility2 tại đây(dùng python2 để chạy), không dùng được volatility3 bởi tác giả ko viết plugin này cho nó. https://github.com/volatilityfoundation/volatility rồi sau đó copy plugin bilocker.py vào /volatility/volatility/plugins
+- Qua github bitlocker plugin ta thấy câu lệnh để xuất các FVEK hoặc VMK là `python2 vol.py -f memdump.mem --profile=??? bitlocker` để biết được bitlocker là của windows mấy ta cần chạy plugin volatilty imageinfo `pyhton2 vol.py -f memdump.mem imageinfo` qua đó ta biết được profile là `Win10x64_19041` vậy ta có câu lệnh đúng `python2 vol.py -f memdump.mem --profile=Win10x64_19041 bitlocker` và nó trả về cho ta 24 FVEK ở 24 địa chỉ khác nhau
+- trong bài viết của noinitrd có nói rằng nếu muốn sử dụng một FVEK sẽ phải đưa thêm `encryption bytes` vào đầu key FVEK, `encryption bytes` đó nằm ở phần `cipher` khi ta chạy plugin bitlocker, vậy là mình phải thêm từng byte theo các cipher khác nhau vào đầu key và key đó cũng cần phải dài chính xác 64bytes + 2bytes ecryption có một vài key trong đây chỉ dài 32bytes vậy sau khi thêm `encryption bytes` ta sẽ phải pad thêm nhiều số `0` vào cho đủ 66bytes
+- Thật may mắn bởi vì dislocker có cơ chế tự động làm được những điều trên với lệnh `--dislocker dir` nếu thêm vào cuối câu lệnh volatility sẽ làm những điều trên hộ ta
+- Câu lệnh để lấy các FVEK chính xác `python2 vol.py -f memdump.mem --profile=Win10x64_19041 bitlocker --dislocker dir`
+- Bây giờ ta đã có 24 key FVEK trong thư mục `dir`, chỉ có 1 key là chính xác, các key còn lại sẽ chỉ decrypt `bitlocker-2.dd` thành data thay vì `NTFS`, flag chỉ nằm trong file có dạng `NTFS`
+- Có thể tạo bashscript để tự động hoá việc này, trong bài key thứ 15 là key chính xác trả về cho ta file `dislocker-file` hợp lệ
+- strings ra flag
+
+![image](https://github.com/user-attachments/assets/aafedc04-9ab6-4994-8d5c-13f518441a6d)
+
+`picoCTF{B1tl0ck3r_dr1v3_d3crypt3d_9029ae5b}`
+
+# `Bài này làm trên wsl python2 chạy mãi không ra cứ kẹt tại volatility framweork, chưa biết vì sao??`
