@@ -134,7 +134,7 @@ $bitlocker$3$16$2b71884a0ef66f0b9de049a82a39d15b$1048576$12$00be8a46ead6da010600
 - Thật may mắn bởi vì dislocker có cơ chế tự động làm được những điều trên với lệnh `--dislocker dir` nếu thêm vào cuối câu lệnh volatility sẽ làm những điều trên hộ ta
 - Câu lệnh để lấy các FVEK chính xác `python2 vol.py -f memdump.mem --profile=Win10x64_19041 bitlocker --dislocker dir`
 - Bây giờ ta đã có 24 key FVEK trong thư mục `dir`, chỉ có 1 key là chính xác, các key còn lại sẽ chỉ decrypt `bitlocker-2.dd` thành data thay vì `NTFS`, flag chỉ nằm trong file có dạng `NTFS`
-- Có thể tạo bashscript để tự động hoá việc này, trong bài key thứ 15 là key chính xác trả về cho ta file `dislocker-file` hợp lệ
+- Có thể tạo bashscript để tự động hoá việc này, trong bài key thứ 16 là key chính xác trả về cho ta file `dislocker-file` hợp lệ
 - strings ra flag
 
 ![image](https://github.com/user-attachments/assets/aafedc04-9ab6-4994-8d5c-13f518441a6d)
