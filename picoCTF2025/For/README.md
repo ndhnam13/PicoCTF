@@ -142,3 +142,4 @@ $bitlocker$3$16$2b71884a0ef66f0b9de049a82a39d15b$1048576$12$00be8a46ead6da010600
 `picoCTF{B1tl0ck3r_dr1v3_d3crypt3d_9029ae5b}`
 
 # `Bài này làm trên wsl python2 chạy mãi không ra cứ kẹt tại volatility framweork, chưa biết vì sao??`
+- Update 25/3 xoá wsl đi tải lại thì được xd, chắc trước do có tải một vài python package với `--break-package-system` nên làm hỏng 💀
